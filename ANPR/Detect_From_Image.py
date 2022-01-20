@@ -1,13 +1,13 @@
 import cv2 
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 from Load_Model import *
 # get_ipython().run_line_magic('matplotlib', 'inline')
 # %matplotlib inline
 
 category_index = label_map_util.create_category_index_from_labelmap(files['LABELMAP'])
 
-IMAGE_PATH = os.path.join(paths['IMAGE_PATH'], 'test', 'Cars430.png')
+IMAGE_PATH = os.path.join(paths['IMAGE_PATH'], 'test', 'Cars422.png')
 
 img = cv2.imread(IMAGE_PATH)
 image_np = np.array(img)
@@ -37,5 +37,6 @@ viz_utils.visualize_boxes_and_labels_on_image_array(
             min_score_thresh=.4,
             agnostic_mode=False)
 
+plt.switch_backend('TkAgg')
 plt.imshow(cv2.cvtColor(image_np_with_detections, cv2.COLOR_BGR2RGB))
 plt.show()
