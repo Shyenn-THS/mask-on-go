@@ -18,7 +18,7 @@ for idx, box in enumerate(boxes):
     region = image[int(roi[0]):int(roi[2]),int(roi[1]):int(roi[3])]
     reader = easyocr.Reader(['en'])
     ocr_result = reader.readtext(region)
-    print(ocr_result)
+    # print(ocr_result)
     plt.imshow(cv2.cvtColor(region, cv2.COLOR_BGR2RGB))
 
 region_threshold = 0.6
