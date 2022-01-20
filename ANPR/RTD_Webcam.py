@@ -36,8 +36,8 @@ while cap.isOpened():
     try: 
         text, region = ocr_it(image_np_with_detections, detections, detection_threshold, region_threshold)
 
-        if len(text)>0:
-            save_results(text, region, 'realtimeresults.csv', 'detectionResults')
+        if len(text[0])>0:
+            save_results(text, region, 'detectionResults')
     except:
         pass
 
