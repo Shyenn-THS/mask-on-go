@@ -40,7 +40,5 @@ def ocr_it(image, detections):
         
         text = filter_text(region, ocr_result, region_threshold)
         
-        plt.imshow(cv2.cvtColor(region, cv2.COLOR_BGR2RGB))
-        plt.show()
         print(text)
         return text, region

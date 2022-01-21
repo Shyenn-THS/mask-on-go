@@ -64,8 +64,8 @@ while cap.isOpened():
         except:
             pass
 
-    cv2.imshow("Mask Detector", cv2.resize(frame, (500, 500)))     
-    cv2.imshow('Number Plate Detector',  cv2.resize(image_np_with_detections, (500, 500)))
+    cv2.imshow("Mask Detector", cv2.resize(frame, (400, 400)))     
+    cv2.imshow('Number Plate Detector',  cv2.resize(image_np_with_detections, (400, 400)))
     
     if cv2.waitKey(10) & 0xFF == ord('q'):
         cap.release()
