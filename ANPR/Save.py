@@ -3,7 +3,6 @@ from OCR import *
 from dotenv import load_dotenv
 load_dotenv()
 
-
 def get_database():
     from pymongo import MongoClient
     import pymongo
@@ -29,6 +28,3 @@ def save_results(text, region, folder_path):
     
     data = {"img_name": img_name, "text": text}
     number_plates.insert_one(data)
-    # with open(csv_filename, mode='a', newline='') as f:
-    #     csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    #     csv_writer.writerow([img_name, text])
